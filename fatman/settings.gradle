@@ -1,0 +1,23 @@
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+
+        maven{url "https://jitpack.io"}//(캘린더)추가
+        jcenter() // (캘린더)추가
+
+
+        //kako sdk repository 추가
+        maven { url 'https://devrepo.kakao.com/nexus/content/groups/public/'}
+    }
+}
+rootProject.name = "fatman"
+include ':app'

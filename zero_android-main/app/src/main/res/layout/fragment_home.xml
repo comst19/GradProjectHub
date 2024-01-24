@@ -1,0 +1,559 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+        <variable
+            name="vm"
+            type="com.hackathon.zero.HomeViewModel" />
+        <variable
+            name="constants"
+            type="com.hackathon.zero.util.Constants" />
+
+    </data>
+
+    <com.sothree.slidinguppanel.SlidingUpPanelLayout
+        android:id="@+id/main_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        app:umanoDragView="@id/slide_layout">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/back_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <View
+                android:id="@+id/view_header"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="22dp"
+                android:background="@color/black"
+                app:layout_constraintBottom_toBottomOf="@id/myCardView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/homeNameT"
+                style="@style/h2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="24dp"
+                android:text="@{vm.profileName != null ? @string/home_header_logged_in(vm.profileName) : @string/home_header_not_logged_in}"
+                android:textColor="@color/white"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="000님,\n오늘의 섭취량을 확인하세요" />
+
+            <!--            <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/shareBtn"
+                            android:layout_width="wrap_content"
+                            android:layout_marginEnd="20dp"
+                            android:src="@drawable/ic_share"
+                            android:layout_height="wrap_content"
+                            android:onClick="@{() -> vm.sharedClicked()}"
+                            app:layout_constraintTop_toTopOf="@id/homeNameT"
+                            app:layout_constraintBottom_toBottomOf="@id/homeNameT"
+                            app:layout_constraintRight_toRightOf="parent"/>-->
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/myCardView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/gray300"
+                app:cardCornerRadius="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/homeNameT">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/ll_total_intake"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="36dp"
+                    android:paddingVertical="20dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/pretendard_medium.15sp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/sugarText"
+                            android:textColor="@color/red300" />
+
+                        <TextView
+                            android:id="@+id/mySugarT"
+                            style="@style/pretendard_bold.21sp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="@{vm.sugar != 0.0 ? @string/sugar_info(vm.sugar) : @string/sugar_info(@string/amount_none)}"
+                            android:textStyle="bold"
+                            tools:text="16g" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <View
+                        android:id="@+id/separator_header"
+                        android:layout_width="1dp"
+                        android:layout_height="42dp"
+                        android:layout_marginStart="32dp"
+                        android:layout_marginEnd="32dp"
+                        android:background="@color/gray300" />
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/pretendard_medium.15sp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/calorieText"
+                            android:textColor="@color/red300" />
+
+                        <TextView
+                            android:id="@+id/myCalorieT"
+                            style="@style/pretendard_bold.21sp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="@{vm.calories != 0 ? @string/calorie_info(vm.calories) : @string/calorie_info(@string/amount_none)}"
+                            android:textStyle="bold"
+                            tools:text="100kcal" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/weekInfoCardView"
+                android:layout_width="0dp"
+                android:layout_height="360dp"
+                android:layout_marginTop="8dp"
+                app:cardCornerRadius="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/myCardView"
+                android:layout_marginHorizontal="20dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/background_weekly_intake"
+                    android:scaleType="centerCrop"/>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_weekly_intake"
+                        style="@style/pretendard_bold.16sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="20dp"
+                        android:text="이번주 당 섭취"
+                        android:textColor="@color/gray100"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/pretendard_medium.12sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="@string/home_sugar_limitation"
+                        android:textColor="@color/gray400"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_weekly_intake"
+                        app:layout_constraintStart_toEndOf="@id/tv_weekly_intake" />
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="158dp"
+                        android:layout_marginHorizontal="20dp"
+                        android:layout_marginBottom="40dp"
+                        android:orientation="vertical"
+                        app:layout_constraintBottom_toTopOf="@id/btn_start">
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:id="@+id/ll_weekdays_top"
+                            android:layout_width="match_parent"
+                            android:layout_height="72dp"
+                            android:orientation="horizontal">
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/card_monday"
+                                android:layout_width="72dp"
+                                android:layout_height="72dp"
+                                app:cardCornerRadius="8dp"
+                                android:layout_marginStart="40dp"
+                                android:backgroundTint="@color/gray900">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="월"
+                                    style="@style/pretendard_medium.14sp"
+                                    android:layout_gravity="center"
+                                    android:gravity="center"
+                                    android:backgroundTint="@color/gray400"/>
+
+                                <ImageView
+                                    android:id="@+id/iv_stamp_monday"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/ic_stamp_monday"
+                                    android:visibility="@{vm.stamps.get(0) ? View.VISIBLE : View.GONE}"/>
+
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/card_tuesday"
+                                android:layout_width="72dp"
+                                android:layout_height="72dp"
+                                android:layout_marginHorizontal="20dp"
+                                app:cardCornerRadius="8dp"
+                                android:backgroundTint="@color/gray900">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="화"
+                                    style="@style/pretendard_medium.14sp"
+                                    android:layout_gravity="center"
+                                    android:gravity="center"
+                                    android:backgroundTint="@color/gray400" />
+
+                                <ImageView
+                                    android:id="@+id/iv_stamp_tuesday"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/ic_stamp_tuesday"
+                                    android:visibility="@{vm.stamps.get(1) ? View.VISIBLE : View.GONE}"/>
+
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/card_wednesday"
+                                android:layout_width="72dp"
+                                android:layout_height="72dp"
+                                app:cardCornerRadius="8dp"
+                                android:layout_marginEnd="40dp"
+                                android:backgroundTint="@color/gray900">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="수"
+                                    style="@style/pretendard_medium.14sp"
+                                    android:layout_gravity="center"
+                                    android:gravity="center"
+                                    android:backgroundTint="@color/gray400" />
+
+                                <ImageView
+                                    android:id="@+id/iv_stamp_wednesday"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/ic_stamp_wednesday"
+                                    android:visibility="@{vm.stamps.get(2) ? View.VISIBLE : View.GONE}"/>
+
+                            </androidx.cardview.widget.CardView>
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:id="@+id/ll_weekdays_bottom"
+                            android:layout_width="match_parent"
+                            android:layout_height="72dp"
+                            android:layout_marginTop="20dp"
+                            android:orientation="horizontal">
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/card_thursday"
+                                android:layout_width="72dp"
+                                android:layout_height="72dp"
+                                app:cardCornerRadius="8dp"
+                                android:layout_marginEnd="6dp"
+                                android:backgroundTint="@color/gray900">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="목"
+                                    style="@style/pretendard_medium.14sp"
+                                    android:layout_gravity="center"
+                                    android:gravity="center"
+                                    android:backgroundTint="@color/gray900"/>
+
+                                <ImageView
+                                    android:id="@+id/iv_stamp_thursday"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/ic_stamp_thursday"
+                                    android:visibility="@{vm.stamps.get(3) ? View.VISIBLE : View.GONE}"/>
+
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/card_friday"
+                                android:layout_width="72dp"
+                                android:layout_height="72dp"
+                                app:cardCornerRadius="8dp"
+                                android:layout_marginHorizontal="6dp"
+                                android:backgroundTint="@color/gray900">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="금"
+                                    style="@style/pretendard_medium.14sp"
+                                    android:layout_gravity="center"
+                                    android:gravity="center"
+                                    android:backgroundTint="@color/gray900" />
+
+                                <ImageView
+                                    android:id="@+id/iv_stamp_friday"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/ic_stamp_friday"
+                                    android:visibility="@{vm.stamps.get(4) ? View.VISIBLE : View.GONE}"/>
+
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/card_saturday"
+                                android:layout_width="72dp"
+                                android:layout_height="72dp"
+                                app:cardCornerRadius="8dp"
+                                android:layout_marginHorizontal="8dp"
+                                android:backgroundTint="@color/gray900">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="토"
+                                    style="@style/pretendard_medium.14sp"
+                                    android:layout_gravity="center"
+                                    android:gravity="center"
+                                    android:backgroundTint="@color/gray400" />
+
+                                <ImageView
+                                    android:id="@+id/iv_stamp_saturday"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/ic_stamp_saturday"
+                                    android:visibility="@{vm.stamps.get(5) ? View.VISIBLE : View.GONE}"/>
+
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/card_sunday"
+                                android:layout_width="72dp"
+                                android:layout_height="72dp"
+                                app:cardCornerRadius="8dp"
+                                android:layout_marginStart="6dp"
+                                android:backgroundTint="@color/gray900">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="일"
+                                    style="@style/pretendard_medium.14sp"
+                                    android:layout_gravity="center"
+                                    android:gravity="center"
+                                    android:backgroundTint="@color/gray400" />
+
+                                <ImageView
+                                    android:id="@+id/iv_stamp_sunday"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/ic_stamp_sunday"
+                                    android:visibility="@{vm.stamps.get(6) ? View.VISIBLE : View.GONE}"/>
+
+                            </androidx.cardview.widget.CardView>
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_start"
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:layout_margin="16dp"
+                        android:backgroundTint="@color/red300"
+                        android:text="@string/btn_start"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:background="@drawable/radius_button"
+                        app:layout_constraintBottom_toBottomOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/editGoalBtn"
+                style="@style/b2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="목표 수정"
+                android:textColor="@color/gray600"
+                app:layout_constraintEnd_toStartOf="@id/line2"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/weekInfoCardView" />
+
+            <View
+                android:id="@+id/line2"
+                android:layout_width="1dp"
+                android:layout_height="0dp"
+                android:layout_marginVertical="4dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@color/gray400"
+                app:layout_constraintBottom_toBottomOf="@id/editGoalBtn"
+                app:layout_constraintEnd_toStartOf="@id/recordSugarBtn"
+                app:layout_constraintStart_toEndOf="@id/editGoalBtn"
+                app:layout_constraintTop_toTopOf="@id/editGoalBtn" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/recordSugarBtn"
+                style="@style/b2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="혈당 기록"
+                android:textColor="@color/gray600"
+                app:layout_constraintBottom_toBottomOf="@id/line2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/line2"
+                app:layout_constraintTop_toTopOf="@id/line2" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/slide_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/ll_header"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:gravity="center_vertical"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginVertical="12dp"
+                android:layout_marginHorizontal="20dp">
+
+                <TextView
+                    android:id="@+id/tv_record_header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/header_beverage_record"
+                    style="@style/pretendard_bold.18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_weight="4"/>
+
+                <ImageView
+                    android:id="@+id/btn_write"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:src="@drawable/ic_write" />
+
+                <ImageView
+                    android:id="@+id/btn_stretch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:src="@drawable/ic_arrow_up" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <LinearLayout
+                android:id="@+id/ll_search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/ll_header"
+                android:orientation="horizontal">
+                <androidx.appcompat.widget.SearchView
+                    android:id="@+id/search_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:focusable="true"
+                    android:layout_marginTop="40dp"
+                    app:iconifiedByDefault="false"
+                    app:layout_constraintVertical_weight="1"
+                    android:layout_weight="8"
+                    app:queryHint="@string/hint_enter_beverage" />
+
+                <ImageView
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:src="@drawable/ic_search"
+                    android:layout_weight="3"
+                    android:layout_gravity="center_vertical"
+                    android:onClick="@{() -> vm.queryChanged()}"/>
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_search_result"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toBottomOf="@id/ll_search"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginHorizontal="20dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_complete"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="@color/red300"
+                android:text="@string/btn_complete"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:background="@drawable/radius_button"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.sothree.slidinguppanel.SlidingUpPanelLayout>
+</layout>

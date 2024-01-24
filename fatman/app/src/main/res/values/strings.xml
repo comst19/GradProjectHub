@@ -1,0 +1,57 @@
+<resources>
+    <string name="app_name">fatman</string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="title_activity_ar">ArActivity</string>
+    <string name="time">시간</string>
+    <string name="init_time">00:00</string>
+    <string name="kilometer">킬로미터</string>
+    <string name="init_kilometer">0.00</string>
+    <string name="giveup">포기</string>
+    <string name="move">출동</string>
+    <string name="expected_distance">예상거리</string>
+    <string name="temp_km">nkm</string>
+    <string name="dialog_notice">출동하시겠습니까?</string>
+
+    <string-array name="custom_weekdays">
+        <item>MON</item>
+        <item>TUE</item>
+        <item>WED</item>
+        <item>THU</item>
+        <item>FRI</item>
+        <item>SAT</item>
+        <item>SUN</item>
+    </string-array>
+
+    <string-array name="custom_months">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+    </string-array>
+
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="get">포획완료</string>
+    <string name="distance">거리</string>
+    <string name="data_miss">확인불가</string>
+    <string name="error_lost_destination_latlng">[오류] 도착지 정보 유실</string>
+    <string name="to_location_key">TO_LOCATION</string>
+    <string name="km">km</string>
+    <string name="go_home_fragment">홈화면으로 돌아가기</string>
+    <string name="no_selected_avata">선택된 아바타가 없습니다.\n기본 아바타로 적용하시겠습니까?</string>
+    <string name="store_dialog_no">아뇨, 다시 고를래요.</string>
+    <string name="yes">네.</string>
+    <string name="no_selected_avata_title">선택된 아바타가 없습니다.</string>
+    <string name="prefix_of_access_token">auth_token:</string>
+    <string name="prefix_of_refresh_token">refresh_token:</string>
+    <string name="nickname_key">nickname</string>
+    <string name="unknown_player">알 수 없음</string>
+</resources>

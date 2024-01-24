@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/white" /> <!-- 버튼의 배경색 light_sky_blue-->
+    <corners android:radius="7dp" /><!-- 모서리의 반지름 값 -->
+
+</shape>

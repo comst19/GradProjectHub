@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="item"
+            type="com.hackathon.zero.data.Product" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="4dp"
+        android:background="@drawable/shape_round_8"
+        android:backgroundTint="@color/gray300">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/productNameT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@{item.productName}"
+            android:theme="@style/pretendard_medium.14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="콜라" />
+
+        <TextView
+            android:id="@+id/line2"
+            android:text="•"
+            app:layout_constraintStart_toEndOf="@id/productNameT"
+            app:layout_constraintTop_toTopOf="@id/productNameT"
+            app:layout_constraintBottom_toBottomOf="@id/productNameT"
+            android:layout_marginStart="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/productcalorieT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:text="@{@string/ml_info(item.productCapacity)}"
+            android:theme="@style/pretendard_medium.14sp"
+            app:layout_constraintStart_toEndOf="@id/line2"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="250kcal" />
+
+
+        <TextView
+            android:id="@+id/dateT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:textColor="@color/gray600"
+            android:theme="@style/pretendard_medium.14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="@{@string/min(item.lastProductId)}"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="3분전" />
+
+        <TextView
+            android:id="@+id/sugarT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="9dp"
+            android:layout_marginBottom="16dp"
+            android:text="@string/sugarText"
+            android:textColor="@color/red300"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/productNameT" />
+
+        <TextView
+            android:id="@+id/sugarDetailT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:theme="@style/pretendard_bold.16sp"
+            android:text="@{@string/sugar_info(item.productSugar)}"
+            app:layout_constraintBottom_toBottomOf="@id/sugarT"
+            app:layout_constraintStart_toEndOf="@id/sugarT"
+            app:layout_constraintTop_toTopOf="@id/sugarT"
+            tools:text="16g" />
+
+        <View
+            android:id="@+id/line"
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:layout_marginVertical="4dp"
+            android:layout_marginStart="16dp"
+            android:background="@color/gray600"
+            app:layout_constraintBottom_toBottomOf="@id/sugarDetailT"
+            app:layout_constraintStart_toEndOf="@id/sugarDetailT"
+            app:layout_constraintTop_toTopOf="@id/sugarDetailT" />
+
+        <TextView
+            android:id="@+id/calorieT"
+            app:layout_constraintStart_toEndOf="@id/line"
+            app:layout_constraintTop_toTopOf="@id/sugarT"
+            app:layout_constraintBottom_toBottomOf="@id/sugarT"
+            android:layout_marginStart="16dp"
+            android:text="@string/calorieText"
+            android:textColor="@color/red300"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/calorieDetailT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:theme="@style/pretendard_bold.16sp"
+            app:layout_constraintBottom_toBottomOf="@id/sugarT"
+            app:layout_constraintStart_toEndOf="@id/calorieT"
+            android:text="@{@string/calorie_info(item.productCalorie)}"
+            app:layout_constraintTop_toTopOf="@id/sugarT"
+            tools:text="16g" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

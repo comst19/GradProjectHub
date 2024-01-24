@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.hackathon.zero.GoalSettingViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".GoalSettingFragment">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/goalText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="40dp"
+            android:text="@string/myGoalText"
+            android:textColor="@color/black"
+            android:theme="@style/pretendard_bold.24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/goalIntroText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            tools:text="@string/notGoalIntroText"
+            android:text="홍길동님의 정보를 토대로 목표를 설정했어요."
+            android:textColor="@color/gray600"
+            android:theme="@style/pretendard_medium.15sp"
+            app:layout_constraintStart_toStartOf="@id/goalText"
+            app:layout_constraintTop_toBottomOf="@id/goalText" />
+
+
+        <ImageView
+            android:id="@+id/backGroundGoal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:src="@drawable/goal_background"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="매일"
+            android:textColor="@color/white"
+            android:theme="@style/pretendard_bold.24sp"
+            app:layout_constraintBottom_toTopOf="@id/myGoalT"
+            app:layout_constraintStart_toStartOf="@id/myGoalT" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/myGoalT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/pretendard_semibold"
+            android:text="25g"
+            android:textColor="@color/red300"
+            android:textSize="48sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/backGroundGoal"
+            app:layout_constraintEnd_toEndOf="@id/backGroundGoal"
+            app:layout_constraintStart_toStartOf="@id/backGroundGoal"
+            app:layout_constraintTop_toTopOf="@id/backGroundGoal"
+            tools:text="25g" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/untilText"
+            android:textColor="@color/red300"
+            android:theme="@style/pretendard_bold.16sp"
+            app:layout_constraintBottom_toBottomOf="@id/myGoalT"
+            app:layout_constraintStart_toEndOf="@id/myGoalT"
+            app:layout_constraintTop_toTopOf="@id/myGoalT" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/shape_round_8"
+            android:backgroundTint="@color/red300"
+            android:onClick="@{()-> vm.okClick()}"
+            android:text="확인"
+            android:textColor="@color/white"
+            android:theme="@style/pretendard_bold.21sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

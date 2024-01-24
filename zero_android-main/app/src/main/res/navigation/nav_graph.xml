@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/myFragment"
+        android:name="com.hackathon.zero.presentation.my.MyFragment"
+        android:label="fragment_my"
+        tools:layout="@layout/fragment_my" />
+    <fragment
+        android:id="@+id/homeFragment"
+        tools:layout="@layout/fragment_home"
+        android:name="com.hackathon.zero.HomeFragment"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_myFragment"
+            app:destination="@id/myFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_privateInfoFragment"
+            app:destination="@id/privateInfoFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_goalSettingFragment"
+            app:destination="@id/goalSettingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.hackathon.zero.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail" />
+    <fragment
+        android:id="@+id/privateInfoFragment"
+        android:name="com.hackathon.zero.PrivateInfoFragment"
+        android:label="fragment_private_info"
+        tools:layout="@layout/fragment_private_info" >
+        <action
+            android:id="@+id/action_privateInfoFragment_to_inputInfoFragment"
+            app:destination="@id/inputInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/inputInfoFragment"
+        android:name="com.hackathon.zero.presentation.inputinfo.InputInfoFragment"
+        android:label="fragment_input_info"
+        tools:layout="@layout/fragment_input_info" >
+        <action
+            android:id="@+id/action_inputInfoFragment_to_inputInfo2Fragment"
+            app:destination="@id/inputInfo2Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/inputInfo2Fragment"
+        android:name="com.hackathon.zero.presentation.inputinfo.InputInfo2Fragment"
+        android:label="fragment_input_info2"
+        tools:layout="@layout/fragment_input_info2" >
+
+        <argument
+            android:name="weight"
+            app:argType="integer" />
+
+        <argument
+            android:name="age"
+            app:argType="integer" />
+        <argument
+            android:name="height"
+            app:argType="integer" />
+        <argument
+            android:name="gender"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/goalSettingFragment"
+        android:name="com.hackathon.zero.GoalSettingFragment"
+        android:label="fragment_goal_setting"
+        tools:layout="@layout/fragment_goal_setting" />
+</navigation>

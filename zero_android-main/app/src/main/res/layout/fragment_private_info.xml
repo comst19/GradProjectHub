@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".PrivateInfoFragment">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/agreeT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="40dp"
+        android:text="@string/infoAgreeT"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toTopOf="parent"
+        android:theme="@style/pretendard_bold.24sp"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/agreeIntroT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="@string/agreeIntroText"
+        android:textColor="@color/gray600"
+        android:theme="@style/pretendard_medium.15sp"
+        app:layout_constraintStart_toStartOf="@id/agreeT"
+        app:layout_constraintTop_toBottomOf="@id/agreeT" />
+
+
+    <TextView
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/agreeIntroT"
+        android:theme="@style/pretendard_medium.15sp"
+        android:id="@+id/agreeDetailT"
+        android:layout_marginTop="82dp"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:text="@string/detailAgreeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/agreeBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/shape_round_8"
+        android:backgroundTint="@color/red300"
+        android:text="@string/agreeText"
+        android:textColor="@color/white"
+        android:theme="@style/pretendard_bold.21sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

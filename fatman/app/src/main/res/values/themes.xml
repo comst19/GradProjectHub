@@ -1,0 +1,50 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Fatman" parent="Theme.Material3.Light.NoActionBar">
+        <item name="android:statusBarColor" tools:targetApi = "l">@color/blue</item>
+        <item name="android:windowBackground">@color/blue</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+
+    <style name="Theme.Fatman" parent="Base.Theme.Fatman" />
+
+    <style name="Theme.Fatman.WhiteStatusBar" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:statusBarColor" tools:targetApi="l">@color/white</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+
+    <!-- 캘린더 -->
+    <style name="Base.Theme.Testtttttttttttttttt" parent="Theme.Material3.DayNight.NoActionBar">
+
+    </style>
+    <style name="Theme.Testtttttttttttttttt" parent="Base.Theme.Testtttttttttttttttt" />
+
+
+    <!-- 달력에 사용하는 스타일 -->
+    <style name="CustomTextAppearance" parent="TextAppearance.AppCompat.Medium">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+
+    <!-- 숫자(날짜)들에 적용되는 스타일 -->
+    <style name="CalenderViewDateCustomText" parent="android:TextAppearance.DeviceDefault.Small">
+        <item name="android:textColor">#6AC9FF</item>
+        <item name="android:fontFamily">@font/concert_one_regular</item>
+
+    </style>
+
+
+    <style name="CalenderViewWeekCustomText" parent="android:TextAppearance.DeviceDefault.Medium">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">13dp</item>
+    </style>
+
+    <!-- 연, 월을 표시하는 헤더에 적용되는 스타일 -->
+    <style name="CalendarWidgetHeader">
+        <item name="android:textSize">70dp</item>
+        <item name="android:textColor">#39B8FF</item>
+
+    </style>
+</resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppTheme.SplashScreen" parent="Theme.Material3.DayNight.NoActionBar">
+
+        <item name="colorPrimary">@color/red300</item>
+
+        <!-- API 31+ specific attributes -->
+        <item name="android:windowSplashScreenBackground">@color/black</item>
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/ic_logo</item>
+
+    </style>
+</resources>

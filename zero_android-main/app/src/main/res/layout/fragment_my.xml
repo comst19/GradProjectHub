@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".presentation.my.MyFragment">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/closeBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="9dp"
+            android:src="@drawable/ic_clear"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/myHistoryT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="내 기록"
+            android:theme="@style/pretendard_bold.16sp"
+            app:layout_constraintBottom_toBottomOf="@id/closeBtn"
+            app:layout_constraintEnd_toStartOf="@id/addBtn"
+            app:layout_constraintStart_toEndOf="@id/closeBtn"
+            app:layout_constraintTop_toTopOf="@id/closeBtn" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/addBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="9dp"
+            android:layout_marginEnd="20dp"
+            android:src="@drawable/ic_add"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/calendarView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:orientation="horizontal"
+            tools:listitem="@layout/itme_calender"
+            tools:itemCount="7"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/closeBtn" >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginTop="4dp"
+                    android:id="@+id/weekDay"
+                    android:layout_marginStart="16sp"
+                    android:layout_marginEnd="16sp"
+                    android:layout_width="wrap_content"
+                    android:textColor="@color/gray400"
+                    android:text="화"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/weekDay"
+                    android:layout_marginTop="8dp"
+                    android:id="@+id/todayCalorie"
+                    android:text="0g"
+                    android:theme="@style/pretendard_bold.16sp"
+                    android:textColor="@color/gray700"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/dayT"
+                    app:layout_constraintTop_toBottomOf="@id/todayCalorie"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:text="21"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@color/gray500"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginBottom="4dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginTop="4dp"
+                    android:id="@+id/weekDay1"
+                    android:layout_marginStart="16sp"
+                    android:layout_marginEnd="16sp"
+                    android:layout_width="wrap_content"
+                    android:textColor="@color/gray400"
+                    android:text="수"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/weekDay1"
+                    android:layout_marginTop="8dp"
+                    android:id="@+id/todayCalorie1"
+                    android:text="0g"
+                    android:theme="@style/pretendard_bold.16sp"
+                    android:textColor="@color/gray700"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/dayT1"
+                    app:layout_constraintTop_toBottomOf="@id/todayCalorie1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:text="22"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@color/gray500"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginBottom="4dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginTop="4dp"
+                    android:id="@+id/weekDay3"
+                    android:layout_marginStart="16sp"
+                    android:layout_marginEnd="16sp"
+                    android:layout_width="wrap_content"
+                    android:textColor="@color/gray400"
+                    android:text="목"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/weekDay3"
+                    android:layout_marginTop="8dp"
+                    android:id="@+id/todayCalorie3"
+                    android:text="0g"
+                    android:theme="@style/pretendard_bold.16sp"
+                    android:textColor="@color/gray700"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/dayT3"
+                    app:layout_constraintTop_toBottomOf="@id/todayCalorie3"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:text="23"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@color/gray500"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginBottom="4dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginTop="4dp"
+                    android:id="@+id/weekDay4"
+                    android:layout_marginStart="16sp"
+                    android:layout_marginEnd="16sp"
+                    android:layout_width="wrap_content"
+                    android:text="금"
+                    android:textColor="@color/gray400"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/weekDay4"
+                    android:layout_marginTop="8dp"
+                    android:id="@+id/todayCalorie4"
+                    android:text="0g"
+                    android:theme="@style/pretendard_bold.16sp"
+                    android:textColor="@color/gray700"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/dayT4"
+                    app:layout_constraintTop_toBottomOf="@id/todayCalorie4"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:text="24"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@color/gray500"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginBottom="4dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/weekDay5"
+                    android:layout_width="10dp"
+                    android:layout_height="17dp"
+                    android:layout_marginStart="16sp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="16sp"
+                    android:text="토"
+                    android:textColor="@color/gray400"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/todayCalorie5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="0g"
+                    android:textColor="@color/gray700"
+                    android:theme="@style/pretendard_bold.16sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/weekDay5" />
+
+                <TextView
+                    android:id="@+id/dayT5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="4dp"
+                    android:text="25"
+                    android:textColor="@color/gray500"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/todayCalorie5" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginTop="4dp"
+                    android:id="@+id/weekDay6"
+                    android:layout_marginStart="16sp"
+                    android:layout_marginEnd="16sp"
+                    android:layout_width="wrap_content"
+                    android:text="일"
+                    android:textColor="@color/gray400"
+                    tools:text ="일"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/weekDay6"
+                    android:id="@+id/todayCalorie6"
+                    android:text="21g"
+                    android:gravity="center"
+                    android:background="@drawable/seekbar_thumb"
+                    android:theme="@style/pretendard_bold.16sp"
+                    android:textColor="@color/white"
+                    android:layout_width="37dp"
+                    android:layout_height="37dp"/>
+
+                <TextView
+                    android:id="@+id/dayT6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:text="26"
+                    android:textColor="@color/gray500"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.482"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/todayCalorie6"
+                    app:layout_constraintVertical_bias="1.0" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginTop="4dp"
+                    android:id="@+id/weekDay7"
+                    android:text="월"
+                    android:layout_marginStart="16sp"
+                    android:layout_marginEnd="16sp"
+                    android:layout_width="wrap_content"
+                    android:textColor="@color/gray400"
+                    tools:text ="월"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/weekDay7"
+                    android:layout_marginTop="8dp"
+                    android:id="@+id/todayCalorie7"
+                    android:text=""
+                    android:theme="@style/pretendard_bold.16sp"
+                    android:textColor="@color/gray700"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/dayT7"
+                    app:layout_constraintTop_toBottomOf="@id/todayCalorie7"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:text="27"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@color/gray500"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginBottom="4dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+
+        <ImageView
+            android:layout_marginEnd="8dp"
+            app:layout_constraintTop_toTopOf="@id/calendarView"
+            app:layout_constraintBottom_toBottomOf="@id/calendarView"
+            app:layout_constraintEnd_toStartOf="@id/calendarView"
+            android:src="@drawable/ic_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <ImageView
+            android:layout_marginStart="8dp"
+            app:layout_constraintTop_toTopOf="@id/calendarView"
+            app:layout_constraintBottom_toBottomOf="@id/calendarView"
+            app:layout_constraintStart_toEndOf="@id/calendarView"
+            android:src="@drawable/ic_front"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <View
+            android:id="@+id/line"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/gray300"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/calendarView" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/RVAdapter"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp"
+            android:layout_marginHorizontal="20dp"
+            tools:listitem="@layout/item_calorie_card"
+            app:layout_constraintTop_toBottomOf="@id/line"
+            android:layout_width="0dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:layout_height="wrap_content" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

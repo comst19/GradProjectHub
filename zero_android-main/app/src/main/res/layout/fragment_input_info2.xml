@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="vm"
+            type="com.hackathon.zero.presentation.inputinfo.InputInfo2ViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".presentation.inputinfo.InputInfo2Fragment">
+
+        <View
+            android:id="@+id/oneTapView"
+            android:layout_width="0dp"
+            android:layout_height="4dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/gray200"
+            app:layout_constraintEnd_toStartOf="@id/twoTapView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/twoTapView"
+            android:layout_width="0dp"
+            android:layout_height="4dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/gray600"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/oneTapView"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/profileT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:text="프로필작성"
+            android:textColor="@color/black"
+            android:theme="@style/pretendard_bold.24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/oneTapView" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:text="2/2"
+            android:textColor="@color/gray600"
+            android:theme="@style/pretendard_medium.14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/oneTapView" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/detailIntroduceT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="당을 관리하려는 목적과, 평소 운동습관을 알려주세요!"
+            android:textColor="@color/gray600"
+            android:theme="@style/pretendard_medium.15sp"
+            app:layout_constraintStart_toStartOf="@id/profileT"
+            app:layout_constraintTop_toBottomOf="@id/profileT" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/managementPurposeT"
+            style="@style/pretendard_bold.16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:text="관리 목적"
+            app:layout_constraintStart_toStartOf="@id/detailIntroduceT"
+            app:layout_constraintTop_toBottomOf="@id/detailIntroduceT" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/managementPurposeBtn"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="12dp"
+            tools:text="당뇨"
+            android:gravity="start|center"
+            android:onClick="@{()->vm.manageClick()}"
+            android:text="@{vm.managePurpose}"
+            android:background="@drawable/background_spinner"
+            android:paddingHorizontal="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/managementPurposeT" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/activityT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="32dp"
+            android:text="활동성"
+            android:theme="@style/pretendard_bold.16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/managementPurposeBtn" />
+
+        <SeekBar
+            android:progress="@={vm.seekbarValue}"
+            android:id="@+id/seekBar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="12dp"
+            android:max="4"
+            android:progressDrawable="@drawable/seekbar_bar"
+            android:thumb="@drawable/seekbar_thumb"
+            android:tickMark="@drawable/seekbar_tick"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/activityT"
+            tools:progress="3" />
+
+
+        <View
+            android:id="@+id/v1"
+            android:layout_width="1dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="12dp"
+            app:layout_constraintEnd_toStartOf="@id/v2"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="@id/seekBar"
+            app:layout_constraintTop_toBottomOf="@id/seekBar" />
+
+        <View
+            android:id="@+id/v2"
+            android:layout_width="1dp"
+            android:layout_height="1dp"
+            app:layout_constraintEnd_toStartOf="@id/v3"
+            app:layout_constraintStart_toEndOf="@id/v1"
+            app:layout_constraintTop_toTopOf="@id/v1" />
+
+        <View
+            android:id="@+id/v3"
+            android:layout_width="1dp"
+            android:layout_height="1dp"
+            app:layout_constraintEnd_toStartOf="@id/v4"
+            app:layout_constraintStart_toEndOf="@id/v2"
+            app:layout_constraintTop_toTopOf="@id/v1" />
+
+        <View
+            android:id="@+id/v4"
+            android:layout_width="1dp"
+            android:layout_height="1dp"
+            app:layout_constraintEnd_toStartOf="@id/v5"
+            app:layout_constraintStart_toEndOf="@id/v3"
+            app:layout_constraintTop_toTopOf="@id/v1" />
+
+        <View
+            android:id="@+id/v5"
+            android:layout_width="1dp"
+            android:layout_height="1dp"
+            app:layout_constraintEnd_toEndOf="@id/seekBar"
+            app:layout_constraintStart_toEndOf="@id/v4"
+            app:layout_constraintTop_toTopOf="@id/v1" />
+
+
+        <ImageView
+            android:id="@+id/seekbar0T"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_seekbar0_message"
+            android:visibility="@{vm.seekbarValue ==0 ?View.VISIBLE : View.GONE }"
+            app:layout_constraintStart_toStartOf="@id/v1"
+            app:layout_constraintTop_toBottomOf="@id/v1"
+            tools:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/seekbar1T"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_seekbar1_message"
+            android:visibility="@{vm.seekbarValue ==1 ?View.VISIBLE : View.GONE }"
+            app:layout_constraintEnd_toEndOf="@id/v2"
+            app:layout_constraintStart_toStartOf="@id/v2"
+            app:layout_constraintTop_toBottomOf="@id/v2" />
+
+        <ImageView
+            android:id="@+id/seekbar2T"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_seekbar2_message"
+            android:visibility="@{vm.seekbarValue ==2 ?View.VISIBLE : View.GONE }"
+            app:layout_constraintEnd_toEndOf="@id/v3"
+            app:layout_constraintStart_toStartOf="@id/v3"
+            app:layout_constraintTop_toBottomOf="@id/v3" />
+
+        <ImageView
+            android:id="@+id/seekbar3T"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_seekbar3_message"
+            android:visibility="@{vm.seekbarValue ==3 ?View.VISIBLE : View.GONE }"
+            app:layout_constraintEnd_toEndOf="@id/v3"
+            app:layout_constraintStart_toStartOf="@id/v3"
+            app:layout_constraintTop_toBottomOf="@id/v4"
+            tools:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/seekbar4T"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_seekbar4_message"
+            android:visibility="@{vm.seekbarValue ==4 ?View.VISIBLE : View.GONE }"
+            app:layout_constraintEnd_toEndOf="@id/v5"
+            app:layout_constraintTop_toBottomOf="@id/v5" />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/shape_round_8"
+            android:backgroundTint="@color/red300"
+            android:onClick="@{()-> vm.doneClicked()}"
+            android:text="완료"
+            android:textColor="@color/white"
+            android:theme="@style/pretendard_bold.21sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--색상 이름은 임의로 제가 지었습니다.
+디자인분께서 명확한 명칭을 주신다면 변경될 수 있습니다.
+순서는 피그마에 나온대로 입니다.-->
+<resources>
+    <color name="blue">#FF39B8FF</color>
+    <color name="light_blue">#FFADE2FF</color>
+    <color name="sky_blue">#FF6AC9FF</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="dark_blue">#FF0084CE</color>
+    <color name="light_sky_blue">#FF78CEFF</color>
+    <color name="crimson">#FFDC474C</color>
+    <color name="light_red">#FFFF6262</color>
+    <color name="red">#FFE91111</color>
+    <color name="more_light_red">#FFFF6060</color>
+    <color name="black">#FF000000</color>
+    <color name="settingbtn">#FFBFE8FF</color>
+    <color name="editText">#FF9DC6DD</color>
+    <color name="editTexttxt">#FF39B8FF</color>
+    <color name="signUpBtn">#FF3AADED</color>
+
+    <color name="gray">#FFD9D9D9</color>
+    <color name="dark_gray">#FF5B5B5B</color>
+    <color name="translucent_white">#DDFFFFFF</color>
+</resources>

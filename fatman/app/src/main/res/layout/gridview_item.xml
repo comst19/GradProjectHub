@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:background="@drawable/gridview_item_style">
+
+    <ImageView
+        android:id="@+id/gridImg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/image_fatman"/>
+
+    <TextView
+        android:id="@+id/grid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="st"
+        android:layout_marginBottom="10dp"
+        />
+    <TextView
+        android:id="@+id/gridTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="몬스터"
+        android:layout_marginBottom="10dp"
+        />
+</LinearLayout>

@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">zero</string>
+
+    <string name="home_header_logged_in">%s님,\n오늘 섭취량을 확인해보세요</string>
+    <string name="home_header_not_logged_in">User님,\n프로필을 등록해주세요</string>
+    <string name="sugar_info">%sg</string>
+    <string name="calorie_info">%skcal</string>
+    <string name="ml_info">%dml</string>
+    <string name="min">%d분 전</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="todayTotalTextIntake">오늘 내 총 섭취량</string>
+    <string name="sugarText">당 </string>
+    <string name="calorieText">칼로리 </string>
+    <string name="amount_none">-</string>
+    <string name="next">다음</string>
+    <string name="age">나이</string>
+    <string name="weightText">몸무게</string>
+    <string name="heightTexr">키</string>
+    <string name="genderText">성별</string>
+    <string name="inputIntroText">당 섭취량 목표 설정을 위해 필요해요!</string>
+    <string name="home_sugar_limitation">매일 25g 미만</string>
+    <string name="btn_start">시작하기</string>
+    <string name="infoAgreeT">개인 정보 수집 동의</string>
+    <string name="detailAgreeText">당사는 귀하의 건강을 위한 개인 맞춤형 서비스 제공을 \n목표로, 다음과 같은 개인정보를 수집하고 있습니다.\n\n수집하는 개인정보 항목: 이름, 성별, 나이, 건강관리 \n 목적(혈당관리 등),운동 정보 이 정보는 귀하의 건강 상태를 \n파악하고, 맞춤형 건강 관리 서비스를 제공하는데 사용됩니다.\n 당사는 귀하의 정보를 최선의 방식으로 보호하며, \n이 정보는 제3자에게 제공되지 않습니다.\n\n개인정보 수집에 대한 동의는 선택 사항이며, 동의하지 \n않으신다면 해당 서비스 이용에 제한이 있을 수 있습니다.\n본인은 위의 내용을 모두 읽고 이해하였으며, \n이에 동의하십니까?</string>
+    <string name="agreeIntroText">정확한 당 섭취 기록을 위해 필요해요.</string>
+    <string name="agreeText">동의</string>
+    <string name="nameHintText">이름을 입력해 주세요</string>
+    <string name="header_beverage_record">음료 기록</string>
+    <string name="hint_enter_beverage">음료명을 입력해주세요.</string>
+    <string name="btn_complete">완료</string>
+    <string name="myGoalText">나의 당 목표</string>
+    <string name="untilText"> 미만</string>
+    <string name="goalIntroText">%s님의 정보를 토대로 목표를 설정했어요.</string>
+    <string name="notGoalIntroText">000님의 정보를 토대로 목표를 설정했어요.</string>
+</resources>
